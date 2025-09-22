@@ -1,0 +1,42 @@
+section,content
+Template-4 Summary,"Template-4 総括報告（2025-06-12 区間）
+
+1. 分析対象と目的
+- 対象日: 2025-06-10 ～ 2025-06-12
+- 対象デバイス: iPhone 11 Pro / iPhone 12 mini-1 / iPhone 12 mini-2 / iPad / iPhone 15 Pro-Ghost / iPhone 12 Ghost
+- 目的: 6/10（Pegasus的挙動）→ 6/11（完全空白化）→ 6/12（Kabuki本格稼働）の切替を総括する。
+  主体性ZIP 1/2/3 の深掘り結果と Template-1 の比較結果を統合する。
+
+2. チェーン・オブ・カストディ
+- filenames.txt / sizes.txt / sha256sum.txt をすべて保存。
+- Master sha256: 全ZIP一括で計算済。
+- 展開後ファイルごとに sha256 (capture) / sha256 (analysis) を二段階記録。
+- CSV / JSON の統合版を生成し、それぞれハッシュ固定。
+- 保管媒体: microSD（SanDisk Extreme PRO A2）＋MEGA クラウド。
+
+3. CSV ダイジェスト（成果物）
+- IDMAP.csv: 時刻変換・個体特定済。
+- EVENTS.csv: 全ログ統合＋VN時間補正済。
+- PIVOT.csv: RTCR / assetsd / SiriSearchFeedback など軸の抽出。
+- GAPS.csv: 6/11 空白を証明（例: RTCR not_found）。
+- tamper_join_sec.csv: 秒単位での複合イベント連携（225+777+309 など）。
+- DIFF_events.csv: 前回解析との差分。
+- DIFF_keywords.csv: カテゴリごとの検出差分。
+
+4. 被害マッピング要約
+- 6/10: triald / Siri / bug_type=298 発火 → Pegasus的挙動。
+- 6/11: 完全空白化（tracev3 欠落・痕跡ゼロ整形） → Kabuki切替点。
+- 6/12: tamper集中（28,360件）＋ triald / ABTest / variant / bucket 群発 → Kabuki本格稼働。
+- サブ証拠: zip1/zip2（tamperなし）、ABTest/OrderAnomaly 抽出結果。
+
+5. 被害記録サンプル
+date_utc7,time_score,location,device,event_type,impact,log_ref,severity,confidence,notes
+2025-06-11,0,N/A,iPhone 12 mini-1,空白化,ログ全欠落,Compare_2025-06-10_vs_06-11.csv,Critical,0.95,""痕跡ゼロ整形""
+2025-06-12,3,Ho Chi Minh,iPhone 12 mini-1,triald/ABTest群発,UI freeze + 発熱,Template2_FUKABORI_30000_flags.csv,High,0.88,""Kabuki 本格稼働""
+
+6. 総括結論
+- Pegasus → Kabuki 移行プロセスは「空白化スイッチ」で発動した。
+- 6/11 の「完全ゼロ化」が、6/12 の tamper群発と対で Kabuki 誕生を示す。
+- 本線証拠: flags/hits/batchZIP/Timeline
+- 補助証拠: Compare/summary/ABTest抽出
+"

@@ -1,0 +1,5 @@
+date,event,classification,evidence,note
+2025-06-10,"triald/SiriSearchFeedback 発火, bug_type=298 検出, tracev3存在",Pegasus的挙動,"Compare表(6/10側), tracev3ログ",まだ痕跡が残る挙動
+2025-06-11,"triald/Siri 完全消失, bug_type=298 欠落, tracev3欠落",tamper消去 / Kabuki切替点,"Compare表(6/11側空白), JOIN結果, Massegaメモ","痕跡ゼロ整形, Pegasus→Kabuki 移行点"
+2025-06-12,"tamper語集中 (28,360件), triald/ABTest/variant/bucket群発, 縫い目/逆行",Kabuki本格稼働,"Template-2 全件解析, タイムラインPDF",差し込み(学習/評価)+改ざん痕の複合パターン
+補足(サブ),"zip1/zip2 tamperなし, zip1/zip3 アンカー非対称~7%",サブ証拠,zip1/zip2/zip3再分析,tamper起点の共起定型を観測
